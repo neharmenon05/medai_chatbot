@@ -4,12 +4,12 @@
 
 # Implementation Details  
 
-    **Functionality**:   
+    Functionality:   
         - Homepage with Chatbot   
         - Symptom Checker   
         - Hospital Locator  
         
-    **Tools and Libraries**:   
+    Tools and Libraries:   
         - Waxston AI   
         - OpenCage API   
         - Overpass API   
