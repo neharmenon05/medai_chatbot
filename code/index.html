@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED-AI - First Aid Chatbot</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        /* Header Styling */
+        header {
+            width: 100%;
+            background-color: #feb2e1;            ;
+            color: white;
+            padding: 5px 0;
+            text-align: left;
+            position: fixed; /* Fixes the header to the top */
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 8px;
+        }
+
+        /* Link Styling */
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #feb2e1;
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hover Effect */
+        a:hover {
+            background-color: #ddd;
+            color: #000;
+        }
+
+        /* Container Styling */
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+        }
+
+        img {
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 600px) {
+            header h2 {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            a {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Navigation Links -->
+    <header>
+        <h2>
+            <a href="hospital-finder.html" aria-label="Find nearest hospital">Find Nearest Hospital</a>
+            <a href="symptom-checker.html" aria-label="Run symptom checker">Run Symptom Checker</a>
+        </h2>
+    </header>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <img src="Chat_bot_logo.png" alt="MEDAI Logo">
+        <h1>Welcome to the First Aid Chatbot</h1>
+        <p>Click the chat icon in the bottom-right corner to start a conversation with the First Aid bot!</p>
+    </div>
+
+    <!-- Watson Assistant Chat Script -->
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "d97bdfe3-51ef-4106-a3a1-2296a8dd19a5", // The ID of this integration.
+            region: "au-syd", // The region your integration is hosted in.
+            serviceInstanceID: "c354abeb-42db-47ca-997b-365f1eb75d4d", // The ID of your service instance.
+            onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+                (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+</html>
